@@ -25,14 +25,14 @@ public class Alianza {
 	public String obtenerNombre(){
 		return nombre;
 	}
-	/**Método eliminarPersonaje.
+	/**Mï¿½todo eliminarPersonaje.
 	 * @param pj es el personaje que eliminaremos de nuestra Alianza.
 	 */
 	public void eliminarPersonaje(Personaje pj){
 		aliados.remove(pj);
 	}
-	/**Método añadirPersonaje.
-	 * @param pj es el personaje que se unirá a una Alianza.
+	/**Mï¿½todo aï¿½adirPersonaje.
+	 * @param pj es el personaje que se unirï¿½ a una Alianza.
 	 */
 	public void aÃ±adirPersonaje(Personaje pj){
 		aliados.add(pj);
