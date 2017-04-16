@@ -2,6 +2,13 @@ package dominio;
 
 import java.io.Serializable;
 
+/*
+ * Clase que define los atributos que tienen en comun todas las clases de personajes, todo lo que los define
+ * ya sea posicion, alianza, estadisticas, nombre del personaje o de la raza, experiencia, nivel, etc.
+ * y sus funciones para manejar los ataques, salud, curaciones, aumentos de experiencia, etc.
+ * Estos personajes son manejados unicamente por jugadores
+ */
+
 public abstract class Personaje implements Peleable, Serializable {
 
 	protected int salud;
@@ -238,6 +245,15 @@ public abstract class Personaje implements Peleable, Serializable {
 		this.energiaTope = energiaTope;
 	}
 
+	
+	/*
+	 * Funcion que determina como ataca un personaje
+	 *  si el personaje tiene salud puede atacar
+	 *  si el personaje que quiere atacar tiene salud puede ser atacado
+	 *  en caso que se cumplan esas condiciones el personaje que recibe el ataque sera atacado con un valor
+	 *  que depende de que se cumplan las condiciones de golpe critico o no
+	 *  De no cumplirse la condicion de critico el ataque sera del mismo valor de ataque que posee el personaje 
+	 */
 	public int atacar(Peleable atacado) {
 		if (salud == 0)
 			return 0;
@@ -293,6 +309,9 @@ public abstract class Personaje implements Peleable, Serializable {
 		return salud > 0;
 	}
 
+	/*
+	 * ERROR DE FUNCIONALIDAD
+	 */
 	public int serAtacado(int daño) {
 		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
 			daño -= this.defensa;

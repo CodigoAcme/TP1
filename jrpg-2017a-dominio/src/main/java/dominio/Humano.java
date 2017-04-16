@@ -1,5 +1,10 @@
 package dominio;
 
+/*
+ * Define la Raza Humano la cual tiene un aumento de salud y energia balanzeado( = 5) por ensima de la que viene
+ * por defecto, sus habilidades son "Incentivar" y "Golpe Fatal"
+ */
+
 public class Humano extends Personaje {
 
 	public Humano(String nombre, Casta casta, int id) {
@@ -22,6 +27,12 @@ public class Humano extends Personaje {
 	}
 
 	// Incentivar
+	/*
+	 * Activa la habilidad llamada "Incentivar" la cual cuesta 10 de energia, en caso de no tener la suficiente 
+	 * energia la funcion devuelve "false", si tiene suficiente se la resta al personaje y al personaje
+	 * afectado por la habilidad recibe un aumento en sus puntos de ataque en relacion a la cantidad de magia
+	 * del humano 
+	 */
 	public boolean habilidadRaza1(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.setEnergia(this.getEnergia() - 10);
@@ -32,6 +43,9 @@ public class Humano extends Personaje {
 	}
 
 	// Golpe Fatal
+	/*
+	 * Activa la habilidad llamada "Golpe Fatal" ERROR HABILIDAD
+	 */
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			if (atacado.serAtacado(atacado.getSalud() / 2) > 0) {
