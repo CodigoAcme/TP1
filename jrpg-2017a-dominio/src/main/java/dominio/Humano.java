@@ -31,7 +31,8 @@ public class Humano extends Personaje {
 	 * Activa la habilidad llamada "Incentivar" la cual cuesta 10 de energia, en caso de no tener la suficiente 
 	 * energia la funcion devuelve "false", si tiene suficiente se la resta al personaje y al personaje
 	 * afectado por la habilidad recibe un aumento en sus puntos de ataque en relacion a la cantidad de magia
-	 * del humano 
+	 * del humano
+	 * @param atacado es el personaje que sera afectado por la habilidad en caso de que sea posible realizarla 
 	 */
 	public boolean habilidadRaza1(Peleable atacado) {
 		if (this.getEnergia() > 10) {
@@ -44,7 +45,10 @@ public class Humano extends Personaje {
 
 	// Golpe Fatal
 	/*
-	 * Activa la habilidad llamada "Golpe Fatal" ERROR HABILIDAD
+	 * Activa la habilidad llamada "Golpe Fatal" se necesita minimo 10 puntos de energia, esta habilidad ataca 
+	 * al enemigo con un daño igual a la mitad de los puntos de salud que este posea y le resta al jugador
+	 * la mitad de sus puntos de energia
+	 * @param atacado es el personaje que sera afectado por la habilidad en caso de que sea posible realizarla 
 	 */
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {

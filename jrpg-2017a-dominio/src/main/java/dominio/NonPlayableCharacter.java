@@ -96,6 +96,7 @@ public class NonPlayableCharacter implements Peleable {
 	 * Funcion que define como el NPC ataca
 	 * 15 de cada 100 ataques son criticos lo cual hace que su ataque reste un 50% mas de vida al rival de lo
 	 * que lo haria en caso de no ser critico el ataque
+	 *  @param atacado es el personaje elegido para que sea atacado en caso de que sea posible 
 	 */
 	public int atacar(Peleable atacado) {
 		if (MyRandom.nextDouble() <= 0.15) {// los NPC tienen 15% de golpes criticos
@@ -110,6 +111,7 @@ public class NonPlayableCharacter implements Peleable {
 	 * En caso de que su probabilidad de defensa falle al daño recibido se le restan la mitad de los puntos
 	 * de defensa del NPC, si el daño resultante es menor a 0 el personaje logro defenderse con exito y por lo
 	 * tanto no pierde puntos de salud, en caso contrario se le resta el daño a la salud del NPC
+	 * @param daño es la cantidad de puntos de daño que el atacante envia
 	 */
 	public int serAtacado(int daÃ±o) {
 		if (MyRandom.nextDouble() >= 0.15) {
